@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Cran::Client do
   it 'returns files from cran-r server' do
-    VCR.use_cassette("cran-packages") do
+    VCR.use_cassette('cran-packages') do
       response = Cran::Client.get('PACKAGES')
 
       expect(response.code).to eq(200)
