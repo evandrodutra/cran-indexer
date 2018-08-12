@@ -23,4 +23,5 @@ group :test do
   gem 'rspec-rails'
   gem 'vcr'
   gem 'webmock'
+  gem 'shoulda-matchers', require: false
 end
