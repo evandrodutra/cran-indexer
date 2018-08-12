@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_12_203619) do
+ActiveRecord::Schema.define(version: 2018_08_12_205244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contributors", force: :cascade do |t|
+    t.bigint "package_version_id"
+    t.string "name"
+    t.string "email"
+    t.integer "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["package_version_id"], name: "index_contributors_on_package_version_id"
+  end
 
   create_table "package_versions", force: :cascade do |t|
     t.bigint "package_id"
