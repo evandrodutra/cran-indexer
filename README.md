@@ -25,3 +25,10 @@ bundle exec rails server
 ```
 
 * Access the project on: [http://localhost:3000/](http://localhost:3000/)
+
+## Tests
+
+* Execute:
+```
+bundle exec rspec
+```
