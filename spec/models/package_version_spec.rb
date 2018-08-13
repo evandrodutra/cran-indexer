@@ -15,4 +15,8 @@ RSpec.describe PackageVersion, type: :model do
     it { is_expected.to validate_presence_of(:version) }
     it { is_expected.to validate_presence_of(:description) }
   end
+
+  context 'Delegations' do
+    it { is_expected.to delegate_method(:name).to(:package) }
+  end
 end
