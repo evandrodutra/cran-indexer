@@ -1,0 +1,24 @@
+<h1>CRAN-R Packages</h1>
+
+<div>
+  <%= form_tag root_path, method: :get do %>
+    <%= text_field_tag :q, params[:q] %>
+    <%= submit_tag "Search" %>
+  <% end %>
+  <ul>
+    <% @packages.each do |package| %>
+      <li>
+        <h3><%= package.name %> (<%= package.version %>)</h3>
+        <small><%= package.title %></small><br />
+        <small>Publication date: <%= package.publication_date %></small><br />
+        <p>
+          <%= package.description %>
+        </p>
+        <p>
+          Authors: <%= package.authors.map{ |a| "#{a.name} <#{a.email}>" }.join(', ') %><br />
+          Maintainers: <%= package.maintainers.map{ |m| "#{m.name} <#{m.email}>" }.join(', ') %><br />
+        </p>
+      </li>
+    <% end %>
+  </ul>
+</div>

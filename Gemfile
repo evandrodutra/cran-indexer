@@ -27,4 +27,5 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'vcr'
   gem 'webmock'
+  gem 'capybara'
 end

@@ -7,6 +7,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'shoulda/matchers'
+require 'capybara/rspec'
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
