@@ -1,24 +1,27 @@
-# README
+# CRAN-INDEXER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Indexer for R packages, based on cran-r list: [https://cran.r-project.org/src/contrib/](https://cran.r-project.org/src/contrib/)
 
-Things you may want to cover:
+## Requirements:
 
-* Ruby version
+* Ruby 2.5.1
+* Postgresql
 
-* System dependencies
+## Setup
 
-* Configuration
+* Initialize the project:
+```
+bin/setup
+```
 
-* Database creation
+* Populate with some packages (There's a cron job that does that every day at 12pm):
+```
+bundle exec rake cran:update
+```
 
-* Database initialization
+* Start the server:
+```
+bundle exec rails server
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Access the project on: [http://localhost:3000/](http://localhost:3000/)
